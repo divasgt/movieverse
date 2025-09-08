@@ -1,0 +1,243 @@
+/* Header Styles */
+/* header.css */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #111827; /* gray-900 */
+  position: fixed;            /* change from sticky to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;                /* ensure it spans full viewport */
+  z-index: 1000;              /* make sure it sits above all content */
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),
+              0 2px 4px -1px rgba(0,0,0,0.06);
+  padding: 0.75rem 0;         /* vertical padding only */
+  margin: 0;                  /* remove any stray margins */
+}
+
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* 32px */
+}
+
+.logo {
+  color: #e50914; /* Netflix red */
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700; /* bold */
+}
+
+.nav-links {
+  display: flex;    /* always show links */
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #9CA3AF; /* gray-400 */
+  font-weight: 500; /* medium */
+}
+.nav-links a.active,
+.nav-links a:hover {
+  color: #ffffff; /* white */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 16px */
+}
+
+.header-btn {
+  font-weight: 500; /* medium */
+  padding: 0.5rem 1rem; /* 8px 16px */
+  border-radius: 0.375rem; /* 6px */
+  font-size: 0.875rem; /* 14px */
+  color: #ffffff;
+}
+
+.header-btn-red {
+  background-color: #e50914; /* Netflix red */
+}
+.header-btn-red:hover {
+  background-color: #a90008; /* Darker red */
+}
+
+.header-btn-gray {
+  background-color: #374151; /* gray-700 */
+}
+.header-btn-gray:hover {
+  background-color: #4B5563; /* gray-600 */
+}
+
+.profile-icon {
+  position: relative;
+}
+
+.profile-button {
+  width: 2.5rem; /* 40px */
+  height: 2.5rem; /* 40px */
+  background-color: #4B5563; /* gray-600 */
+  border-radius: 9999px; /* full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem; /* 20px */
+  outline: none;
+}
+.profile-button:focus {
+   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Focus ring */
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem; /* 8px */
+  background-color: #1f2937; /* gray-800 */
+  border-radius: 0.375rem; /* 6px */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 150px;
+  z-index: 50;
+  display: none; /* Hidden by default */
+}
+
+.profile-dropdown.active {
+  display: block; /* Show when active */
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 0.5rem 1rem; /* 8px 16px */
+  font-size: 0.875rem; /* 14px */
+  color: #ffffff;
+}
+
+.profile-dropdown a:hover {
+  background-color: #374151; /* gray-700 */
+}
+
+/* Search box styles */
+.search-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+#header-search {
+  background: #1f2937;
+  color: #ffffff;
+  padding: 0.4rem 1rem 0.4rem 3.1rem; /* Adjusted padding for icon */
+  font-size: 1rem;
+  width: 270px;
+  transition: border 0.1s ease;
+  align-self: center;
+  border-radius: 7px;
+  border: none;
+  border: 1px solid #47506162;
+  padding-right: 2.7rem;
+  margin-right: 10px;
+}
+
+#header-search::placeholder {
+  color: #9CA3AF;
+  opacity: 0.8;
+  font-size: 15px;
+  text-align: center;
+  /* transform: translateX(-1rem); */
+}
+
+#header-search:focus {
+  outline: none;
+  /* width: 450px; */
+  /* box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); */
+  border: 1px solid #9ca3af62;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-55%);
+  font-family: FontAwesome;
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Offset for fixed header, fixes jumping to movies or tv shows sections when clicking on header links */ 
+section[id] {
+  scroll-margin-top: 6rem; /* Match the header height */
+}
+
+/* Gradient for Cinema AI button (previously named Ask AI) */
+.header-btn-ask-ai {
+  background: linear-gradient(
+      90deg,
+      /* #ff0000, Red */
+      #00ccff,
+      #cc00ff,
+      #00ccff
+      /* #ffba54, Orange */
+      /* #ff0000 Red */
+    );
+    background-size: 200% 100%; /* Larger background for animation */
+    color: #ffffff; /* White text for contrast */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    animation: shimmer 4s linear infinite; /* Magical shimmering effect */
+    transition: transform 0.2s ease; /* Smooth hover scaling */
+}
+
+.header-btn-mood {
+  background: linear-gradient(
+      90deg,
+      #ff0000,
+      /* #00ccff, */
+      /* #cc00ff, */
+      /* #00ccff */
+      #ffba53,
+      #ff0000
+    );
+    background-size: 200% 100%; /* Larger background for animation */
+    color: #ffffff; /* White text for contrast */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    animation: shimmer 3s linear infinite; /* Magical shimmering effect */
+    transition: transform 0.2s ease; /* Smooth hover scaling */
+}
+
+/* Hover effect: slight scale and brighter appearance */
+.header-btn-ask-ai:hover,
+.header-btn-mood:hover {
+  transform: scale(1.08); /* Slight zoom on hover */
+  /* background-position: 100% 0; Shift gradient for hover */
+}
+
+/* Keyframes for magical shimmer animation */
+@keyframes shimmer {
+  0% {
+      background-position: 200% 0%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}

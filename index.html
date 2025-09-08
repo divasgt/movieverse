@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MovieVerse</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/header.css">
+	<link rel="stylesheet" href="styles/footer.css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header-left">
+				<a href="index.html" class="logo">MovieVerse</a>
+				<nav class="nav-links">
+					<a href="#intro-section">Home</a>
+					<a href="#latest-movies">Movies</a>
+					<a href="#latest-tv-shows">TV Shows</a>
+					<div class="search-wrapper">
+						<span class="search-icon">&#xf002;</span>
+						<input type="text" id="header-search" placeholder="Search anything..." />
+					</div>
+				</nav>
+			</div>
+			<div class="header-right">
+				<button class="header-btn header-btn-mood" id="moodRecommendBtn">Mood Recommend</button>
+				<button class="header-btn header-btn-ask-ai">Cinema AI</button>
+				<a href="watchlist.html">
+          <button class="header-btn header-btn-gray">My Watchlist</button>
+        </a>
+				<div class="profile-icon" id="profileIcon">
+					<button class="profile-button">
+						<span class="initial">M</span>
+					</button>
+					<div class="profile-dropdown" id="profileDropdown">
+						<a href="#">Profile</a>
+						<a href="#">Settings</a>
+						<a href="#">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="container main-content">
+		<section class="intro-section" id="intro-section">
+			<h1 class="intro-title">Your One-Stop Website for All Things Cinema</h1>
+			<p class="intro-text">
+				Explore a vast collection of movies and TV shows,
+				from the latest blockbusters to timeless classics.
+			</p>
+		</section>
+
+		<section class="section" id="latest-movies">
+			<h2 class="section-title">Latest Movies</h2>
+			<div id="latestMovies" class="grid-container">
+				<div class="loading grid-span">Loading latest movies...</div>
+			</div>
+		</section>
+
+		<section class="section" id="latest-tv-shows">
+			<h2 class="section-title">Latest TV Shows</h2>
+			<div id="latestTVShows" class="grid-container">
+				<div class="loading grid-span">Loading latest TV shows...</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<h2 class="section-title">Top Rated Movies</h2>
+			<div id="topMovies" class="horizontal-container">
+				<div class="loading full-width">Loading top rated movies...</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<h2 class="section-title">Top Rated TV Shows</h2>
+			<div id="topTVShows" class="horizontal-container">
+				<div class="loading full-width">Loading top rated TV shows...</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			&copy; 2025 MovieVerse. All rights reserved. Data provided by TMDB.
+		</div>
+	</footer>
+
+	<script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>

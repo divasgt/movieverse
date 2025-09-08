@@ -1,0 +1,12 @@
+/* Footer Styles */
+.footer {
+  background-color: #111827; /* gray-900 */
+  padding: 1.5rem 1rem; /* 24px 16px */
+  margin-top: auto; /* Push footer to bottom */
+}
+
+.footer .container {
+  text-align: center;
+  color: #6B7280; /* gray-500 */
+  font-size: 0.875rem; /* 14px */
+}

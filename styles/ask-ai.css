@@ -1,0 +1,107 @@
+/* ask-ai.css */
+.ask-ai-section {
+  text-align: center;
+  padding: 0 0;
+  margin-bottom: 2.5rem;
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  color: #9CA3AF; /* gray-400 */
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat-container {
+  /* background-color: transparent; gray-800 */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  min-height: 200px;
+}
+
+/* Custom Scrollbar */
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-container::-webkit-scrollbar-track {
+  background: #111827; /* gray-900 */
+  border-radius: 10px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: #e50914; /* Netflix red */
+  border-radius: 10px;
+}
+.chat-container {
+  scrollbar-width: thin;
+  scrollbar-color: #e50914 #111827;
+}
+
+.chat-message {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  width: fit-content;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.chat-message.user {
+  background-color: #e50914; /* Netflix red */
+  margin-left: auto;
+  color: #ffffff;
+}
+
+.chat-message.ai {
+  background-color: #374151; /* gray-700 */
+  margin-right: auto;
+  color: #ffffff;
+}
+
+.chat-message.loading {
+  background-color: #374151; /* gray-700 */
+  margin-right: auto;
+  color: #9CA3AF; /* gray-400 */
+  font-style: italic;
+}
+
+.chat-input-group {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  background-color: #374151; /* gray-700 */
+  color: #ffffff;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.chat-input:focus {
+  outline: none;
+  border: 1px solid #e50914; /* Netflix red */
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .chat-container {
+    max-height: 500px;
+  }
+}
