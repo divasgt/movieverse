@@ -54,8 +54,11 @@ function init() {
     }
 
 
-    // Load homepage content if on index.html
-    if (window.location.pathname.includes('index.html')) {
+    // Load homepage content if on index.html or root path
+    if (
+        window.location.pathname.includes('index.html') ||
+        window.location.pathname === '/' // Netlify root
+    ) {
         loadMediaData('/movie/now_playing', 'latestMovies', true, 'grid');
         loadMediaData('/tv/on_the_air', 'latestTVShows', false, 'grid');
         loadMediaData('/movie/top_rated', 'topMovies', true, 'horizontal');
