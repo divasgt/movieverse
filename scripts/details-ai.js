@@ -1,5 +1,6 @@
-/* details-ai.js */
-const GEMINI_API_KEY = ''; // Replace with your actual Gemini API key
+import { getGeminiAPIKey } from "./utils/gemini_api_key.js";
+
+const GEMINI_API_KEY = getGeminiAPIKey();
 
 // System instruction for Gemini
 const SYSTEM_INSTRUCTION = `
@@ -9,7 +10,8 @@ You are an AI assistant for MovieFlix, specializing in answering questions about
 // Chat history to maintain context
 let chatHistory = [];
 
-window.onload = () => {
+// window.onload = () => {
+function setupAIChatEvents() {
   const sendBtn = document.getElementById('sendBtn');
   const chatInput = document.getElementById('chatInput');
   const closeChatBtn = document.getElementById('closeChatBtn');
@@ -27,6 +29,9 @@ window.onload = () => {
     });
   }
 };
+
+setupAIChatEvents();
+
 
 async function sendMessage() {
   const chatInput = document.getElementById('chatInput');

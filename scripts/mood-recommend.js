@@ -1,4 +1,5 @@
 import { API_KEY } from "./main.js";
+import { getGeminiAPIKey } from "./utils/gemini_api_key.js";
 
 // Add global variable to store the prompt
 let finalPrompt = '';
@@ -82,8 +83,8 @@ const questions = [
 let currentStep = 0;
 const answers = {};
 
-// Replace with your actual Gemini API key
-const GEMINI_API_KEY = ''; // Replace with your key
+
+const GEMINI_API_KEY = getGeminiAPIKey();
 
 // Initialize wizard
 window.onload = () => {

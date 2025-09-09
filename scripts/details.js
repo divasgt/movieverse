@@ -184,7 +184,13 @@ function initAIChat() {
   const askAiBtn = document.getElementById('askAiBtn');
   const aiChatSection = document.getElementById('aiChatSection');
   if (askAiBtn && aiChatSection) {
-    askAiBtn.addEventListener('click', () => {
+    askAiBtn.addEventListener('click', async () => {
+      // Dynamically import details-ai.js as an ES module
+      if (!window.detailsAIScriptLoaded) {
+        await import('./details-ai.js');
+        window.detailsAIScriptLoaded = true;
+      }
+      
       aiChatSection.style.display = 'block';
       aiChatSection.scrollIntoView({ behavior: 'smooth' });
     });

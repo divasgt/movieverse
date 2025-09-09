@@ -1,7 +1,7 @@
 import { API_KEY } from "./main.js";
+import { getGeminiAPIKey } from "./utils/gemini_api_key.js";
 
-// Replace with your actual Gemini API key
-const GEMINI_API_KEY = '';
+const GEMINI_API_KEY = getGeminiAPIKey();
 
 // System instruction for Gemini
 const SYSTEM_INSTRUCTION = `
@@ -12,7 +12,7 @@ You are an AI assistant for MovieFlix, a cinema-focused website similar to IMDb 
 let chatHistory = [];
 
 // Initialize page
-window.onload = () => {
+window.onload = () => {  
   const sendBtn = document.getElementById('sendBtn');
   const chatInput = document.getElementById('chatInput');
   const askAiBtn = document.querySelector('.header-btn-ask-ai');
