@@ -54,10 +54,11 @@ function init() {
     }
 
 
-    // Load homepage content if on index.html or root path
+    // Load homepage content if on index.html or root path (for netlify) or ends with /movieverse (for github pages)
     if (
         window.location.pathname.includes('index.html') ||
-        window.location.pathname === '/' // Netlify root
+        window.location.pathname === '/' ||
+        window.location.pathname.endsWith('/movieverse')
     ) {
         loadMediaData('/movie/now_playing', 'latestMovies', true, 'grid');
         loadMediaData('/tv/on_the_air', 'latestTVShows', false, 'grid');
